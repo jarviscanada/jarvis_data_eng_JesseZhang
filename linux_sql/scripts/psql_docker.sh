@@ -26,6 +26,7 @@ case $cmd in
     exit 1
   fi
 
+  #Create the container
 	docker volume create pgdata
 	docker run --name "$db_username" -e POSTGRES_PASSWORD="$db_password" -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 	exit $?
@@ -43,6 +44,7 @@ case $cmd in
 	exit $?
 	;;
 
+  #Other cases
   *)
 	echo 'Illegal command'
 	echo 'Commands: start|stop|create'
