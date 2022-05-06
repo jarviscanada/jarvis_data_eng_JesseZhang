@@ -48,6 +48,8 @@ Technologies used: Linux, Bash, SSH, Docker, PostgreSQL, Git, IntelliJ IDEA.
 This project is in the form of MVP (Minimum viable product) for learning and training. Hence, the Bash scripts and SQL scripts are installed in one host to demonstrate the results.
 
 ## Architecture
+![A cluster diagram with three Linux hosts, a DB, and agents ](./assets/architecture diagram.jpg)
+
 
 ## Scripts
 
