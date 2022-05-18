@@ -5,9 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class RegexExcImpTest {
+public class TestRegexExcImpUnitTest {
 
-  RegexExc regexExc = new RegexExcImp();
+  private RegexExc regexExc = new RegexExcImp();
 
   @Test
   public void givenFilename_withJPGOrJPEG_thenCorrect() {
