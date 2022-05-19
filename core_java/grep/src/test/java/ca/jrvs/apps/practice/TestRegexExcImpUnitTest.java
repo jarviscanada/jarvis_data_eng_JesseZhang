@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TestRegexExcImpUnitTest {
 
-  private RegexExc regexExc = new RegexExcImp();
+  private final RegexExc regexExc = new RegexExcImp();
 
   @Test
   public void givenFilename_withJPGOrJPEG_thenCorrect() {
