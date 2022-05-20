@@ -16,7 +16,7 @@ public interface LambdaStreamExc {
    * @param strings
    * @return
    */
-  Stream<String> createStrStream(String ... strings);
+  Stream<String> createStrStream(String... strings);
 
   /**
    * Convert all strings to uppercase please use createStrStream
@@ -24,7 +24,7 @@ public interface LambdaStreamExc {
    * @param strings
    * @return
    */
-  Stream<String> toUpperCase(String ... strings);
+  Stream<String> toUpperCase(String... strings);
 
   /**
    * filter strings that contains the pattern e.g. filter(stringStream, "a") will return another
@@ -89,11 +89,10 @@ public interface LambdaStreamExc {
   /**
    * Return a lambda function that print a message with a prefix and suffix This lambda can be
    * useful to format logs
-   *
-   * e.g. LambdaStreamExc lse = new LambdaStreamImp();
-   * Consumer<String> printer = lse.getLambdaPrinter("start>", "<end");
-   * printer.accept("Message body");
-   * sout: start>Message body<end
+   * <p>
+   * e.g. LambdaStreamExc lse = new LambdaStreamImp(); Consumer<String> printer =
+   * lse.getLambdaPrinter("start>", "<end"); printer.accept("Message body"); sout: start>Message
+   * body<end
    *
    * @param prefix prefix str
    * @param suffix suffix str

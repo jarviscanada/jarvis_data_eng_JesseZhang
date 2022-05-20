@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -53,25 +52,27 @@ public class JavaGrepImpl implements JavaGrep {
   @Override
   public void process() throws IOException {
     List<String> matchedLines = new ArrayList<>();
-    for (File file : listFiles(rootPath)) {
-      for (String line : readLines(file)) {
-        if (containsPattern(line)) {
-          matchedLines.add(line);
-        }
-      }
-    }
-    writeToFile(matchedLines);
+    listFiles(rootPath).forEach(file -> {
+      readLines(file).forEach(line -> {
+            if (containsPattern(line)) {
+              matchedLines.add(line);
+            }
+          }
+      );
+    });
+
+    writeToFile(matchedLines.stream());
   }
 
   @Override
-  public List<File> listFiles(String rootDir) {
+  public Stream<File> listFiles(String rootDir) {
 
-    try (Stream<Path> stream = Files.walk(Paths.get(rootDir))) {
+    try {
+      Stream<Path> stream = Files.walk(Paths.get(rootDir));
       return stream
           .filter(Files::isRegularFile)
-          .map(Path::toFile)
-          .collect(Collectors.toList());
-    }catch(IOException ex){
+          .map(Path::toFile);
+    } catch (IOException ex) {
       logger.error("Error: Unable to open the file", ex);
     }
 
@@ -79,13 +80,13 @@ public class JavaGrepImpl implements JavaGrep {
   }
 
   @Override
-  public List<String> readLines(File inputFile) throws IllegalArgumentException {
+  public Stream<String> readLines(File inputFile) throws IllegalArgumentException {
 
     List<String> linesRead = new ArrayList<>();
     try (
-      BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile))){
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(inputFile))) {
       String line = bufferedReader.readLine();
-      while(line!=null){
+      while (line != null) {
         linesRead.add(line);
         line = bufferedReader.readLine();
       }
@@ -93,10 +94,10 @@ public class JavaGrepImpl implements JavaGrep {
       logger.error("Error: the input file is not found");
       throw new IllegalArgumentException("The input file is not a file");
     } catch (IOException ex) {
-     logger.error("Error: Unable to read a line", ex);
+      logger.error("Error: Unable to read a line", ex);
     }
 
-    return linesRead;
+    return linesRead.stream();
   }
 
   @Override
@@ -105,14 +106,15 @@ public class JavaGrepImpl implements JavaGrep {
   }
 
   @Override
-  public void writeToFile(List<String> lines) throws IOException {
+  public void writeToFile(Stream<String> lines) throws IOException {
 
-    try(BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile)))){
-      for(String line : lines){
+    try (BufferedWriter writer = new BufferedWriter(
+        new OutputStreamWriter(new FileOutputStream(outFile)))) {
+      for (String line : lines.collect(Collectors.toList())) {
         writer.write(line);
         writer.newLine();
       }
-    }catch (IOException ex){
+    } catch (IOException ex) {
       logger.error("Error: something wrong with writing to the file");
       throw new IOException("Writing to the file fails");
     }
