@@ -42,15 +42,15 @@
   ],
   "jarvis_projects": [
     {
-      "description": "Collect the hardware specifications and monitor host resource usages in real-time, two bash scripts are run and the extracted records are inserted into a PostgreSQL database which is provisioned by Docker. The setup of the database is also automated by running a bash script. SQL queries are implemented to process the records in the database.",
+      "description": "Developed to collect the hardware specifications and monitor host resource usages in real-time. Two bash scripts are run and the extracted records are inserted into a PostgreSQL database which is provisioned by Docker. The setup of the database is also automated by running a bash script. SQL queries are implemented to process the records in the database.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     },
     {
       "description": [
         "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
-        "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+        "JDBC App: Utilized DAO Pattern to interact with the database to perform CRUD operations based on JDBC.",
+        "Grep App: Implemented a Java app that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -85,18 +85,6 @@
   "others": [
     {
       "bullets": [
-        ".."
-      ],
-      "title": "Certificates"
-    },
-    {
-      "bullets": [
-        ".."
-      ],
-      "title": "Awards"
-    },
-    {
-      "bullets": [
         "Bicycling",
         "Volunteer for Generations, The Yellow Door, Montreal, QC (Jun 2018-Aug 2021): visiting the seniors in the downtown Montreal area once a week"
       ],
@@ -106,7 +94,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Implemented cluster monitor project..................................................................................................................",
+      "description": "Implemented projects led by industry experts following the industry standard and using tools like  .......",
       "duration": "2022-present",
       "title": "Software Developer"
     },
@@ -146,5 +134,5 @@
       "Git"
     ]
   },
-  "summary": "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Before the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
+  "summary": "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
 }

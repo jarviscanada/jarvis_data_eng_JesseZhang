@@ -1,6 +1,6 @@
 # Jesse Zhang . Jarvis Consulting
 
-I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Before the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
+I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
 
 ## Skills
 
@@ -15,13 +15,13 @@ I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in 
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/linux_sql)]: Collect the hardware specifications and monitor host resource usages in real-time, two bash scripts are run and the extracted records are inserted into a PostgreSQL database which is provisioned by Docker. The setup of the database is also automated by running a bash script. SQL queries are implemented to process the records in the database.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/linux_sql)]: Developed to collect the hardware specifications and monitor host resource usages in real-time. Two bash scripts are run and the extracted records are inserted into a PostgreSQL database which is provisioned by Docker. The setup of the database is also automated by running a bash script. SQL queries are implemented to process the records in the database.
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/core_java)]:
       
   - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
-  - Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - JDBC App: Utilized DAO Pattern to interact with the database to perform CRUD operations based on JDBC.
+  - Grep App: Implemented a Java app that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/springboot)]: Not Started
 
@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2022-present)**: Implemented cluster monitor project..................................................................................................................
+**Software Developer, Jarvis (2022-present)**: Implemented projects led by industry experts following the industry standard and using tools like  .......
 
 **Software Developer Co-op, Ericsson, Montreal, QC (Sep 2019-Dec 2019)**: Worked with one production team including design, development, maintenance and innovation; added and modified more than 5000 lines of codes for test cases, keeping the coverages on two back-end projects above 90%; technologies: Spring, Java, JUnit, Mockito, PowerMock, SonarQube, Git Bash, Gerrit, MongoDB, PostgreSQL.
 
@@ -61,7 +61,5 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 
 ## Miscellaneous
-- ..
-- ..
 - Bicycling
 - Volunteer for Generations, The Yellow Door, Montreal, QC (Jun 2018-Aug 2021): visiting the seniors in the downtown Montreal area once a week
