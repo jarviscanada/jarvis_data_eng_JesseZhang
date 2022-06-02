@@ -6,5 +6,8 @@ class HelloWorld {
   // Prints "Hello, World" to the terminal window.
   public static void main(String args[]) {
     System.out.println("Hello, World");
+    int value = -12;
+    int unsignedRightShift = value >>> 2;
+    System.out.println(unsignedRightShift);
   }
 }
