@@ -1,5 +1,7 @@
 package ca.jrvs.practice.dataStructure.map;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Employee {
@@ -18,6 +20,20 @@ public class Employee {
     this.age = age;
     this.salary = salary;
   }
+
+  public static void main(String[] args) {
+    JMap<Employee, List<String>> empStrMap = new HashJMap<>();
+    Employee amy = new Employee(1, "Amy", 25, 45000);
+    List<String> amyPreviousCompanies = Arrays.asList("TD", "RBC", "CIBC");
+    empStrMap.put(amy, amyPreviousCompanies);
+    Employee bob = new Employee(2, "Bob", 25, 40000);
+    List<String> bobPreviousCompanies = Arrays.asList("A&W", "Superstore");
+    empStrMap.put(bob, bobPreviousCompanies);
+
+    System.out.println("Bob hashcode: "+bob.hashCode());
+    System.out.println("Bob value: "+ empStrMap.get(bob).toString());
+  }
+
 
   @Override
   public boolean equals(Object o) {
