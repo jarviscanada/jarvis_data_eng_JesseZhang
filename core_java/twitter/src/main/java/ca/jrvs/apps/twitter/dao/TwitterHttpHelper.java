@@ -49,12 +49,9 @@ public class TwitterHttpHelper implements HttpHelper {
    * @return
    */
   @Override
-  public HttpResponse httpPost(URI uri, StringEntity stringEntity) {
+  public HttpResponse httpPost(URI uri) {
     HttpPost request = new HttpPost(uri);
     try {
-      if(stringEntity!=null){
-        request.setEntity(stringEntity);
-      }
       consumer.sign(request);
       return httpClient.execute(request);
     } catch (OAuthException | IOException e) {
@@ -88,9 +85,9 @@ public class TwitterHttpHelper implements HttpHelper {
 
     //Create components
     HttpHelper httpHelper= new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret  );
-    HttpResponse response = httpHelper.httpPost(new URI("https://api.twitter.com/2/tweets"), new StringEntity("{\"text\":\"test from main\"}", ContentType.APPLICATION_JSON));
+    HttpResponse response = httpHelper.httpPost(new URI("https://api.twitter.com/1.1/statuses/update.json?status=test_for_v1.1"));
     System.out.println(EntityUtils.toString(response.getEntity()));
-    HttpResponse response2 = httpHelper.httpGet(new URI("https://api.twitter.com/2/users/44196397/tweets"));
+    HttpResponse response2 = httpHelper.httpGet(new URI("https://api.twitter.com/1.1/statuses/show.json?id=210462857140252672"));
     System.out.println(EntityUtils.toString(response2.getEntity()));
   }
 }

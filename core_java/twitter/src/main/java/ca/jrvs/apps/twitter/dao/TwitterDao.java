@@ -23,10 +23,10 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
    * @return created entity
    */
   @Override
-  public Tweet create(Tweet entity) {
+  public T create(T entity) {
 
     URI uri;
-    uri = getPostUri
+return null;
 
   }
 
