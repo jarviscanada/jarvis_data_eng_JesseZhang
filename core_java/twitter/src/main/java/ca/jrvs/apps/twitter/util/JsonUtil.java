@@ -1,4 +1,4 @@
-package ca.jrvs.apps.twitter.example;
+package ca.jrvs.apps.twitter.util;
 
 import ca.jrvs.apps.twitter.example.dto.Company;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import java.io.IOException;
 
-public class JsonParser {
+public class JsonUtil {
 
   public static final String companyStr = "{\n"
       + "   \"symbol\":\"AAPL\",\n"

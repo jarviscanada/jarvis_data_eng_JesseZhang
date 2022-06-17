@@ -3,7 +3,6 @@ package ca.jrvs.apps.twitter.example;
 import com.google.gdata.util.common.base.PercentEscaper;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Map;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import oauth.signpost.exception.OAuthCommunicationException;
@@ -18,10 +17,11 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 public class TwitterApiTest {
-private static String CONSUMER_KEY = System.getenv("consumerKey");
-private static String CONSUMER_SECRET = System.getenv("consumerSecret");
-private static String ACCESS_TOKEN = System.getenv("accessToken");
-private static String TOKEN_SECRET = System.getenv("tokenSecret");
+
+  private static String CONSUMER_KEY = System.getenv("consumerKey");
+  private static String CONSUMER_SECRET = System.getenv("consumerSecret");
+  private static String ACCESS_TOKEN = System.getenv("accessToken");
+  private static String TOKEN_SECRET = System.getenv("tokenSecret");
 
 
   public static void main(String[] args)
@@ -39,9 +39,9 @@ private static String TOKEN_SECRET = System.getenv("tokenSecret");
     //create an HTTP GET request
     String status = "today is a good day";
     PercentEscaper percentEscaper = new PercentEscaper("", false);
-    HttpPost request = new HttpPost("https://api.twitter.com/2/tweets" );
+    HttpPost request = new HttpPost("https://api.twitter.com/2/tweets");
 
-    String json = "{\"text\":\""+status+"\"}";
+    String json = "{\"text\":\"" + status + "\"}";
     StringEntity requestEntity = new StringEntity(json, ContentType.APPLICATION_JSON);
     request.setEntity(requestEntity);
 
@@ -57,15 +57,7 @@ private static String TOKEN_SECRET = System.getenv("tokenSecret");
     System.out.println(EntityUtils.toString(response.getEntity()));
 
 
-
-
-
-
-
   }
-
-
-
 
 
 }
