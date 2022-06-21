@@ -24,12 +24,12 @@ public class TwitterHttpHelperTest extends TestCase {
         tokenSecret);
   }
 
-//  @Test
-//  public void testHttpPost() throws URISyntaxException, IOException {
-//    setup();
-//    HttpResponse response = httpHelper.httpPost(new URI("https://api.twitter.com/1.1/statuses/update.json?status=test_for_v1.1_again_from_Junit"));
-//    System.out.println(EntityUtils.toString(response.getEntity()));
-//  }
+  @Test
+  public void testHttpPost() throws URISyntaxException, IOException {
+    setup();
+    HttpResponse response = httpHelper.httpPost(new URI("https://api.twitter.com/1.1/statuses/update.json?status=test_for_v1.1_again_from_Junit"));
+    System.out.println(EntityUtils.toString(response.getEntity()));
+  }
 
   @Test
   public void testHttpGet() throws IOException, URISyntaxException {

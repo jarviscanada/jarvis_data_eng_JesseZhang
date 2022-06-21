@@ -38,10 +38,10 @@ public class TwitterDaoIntTest extends TestCase {
     assertEquals(text, tweet.getText());
     assertTrue(hashTag.contains(tweet.getEntities().getHashtags()[0].getText()));
     // https://stackoverflow.com/questions/58148675/coordinates-field-in-tweet-objects
-//    assertNotNull(tweet.getCoordinates());
-//    assertEquals(2, tweet.getCoordinates().getCoordinates().length);
-//    assertEquals(lon, tweet.getCoordinates().getCoordinates()[0]);
-//    assertEquals(lat, tweet.getCoordinates().getCoordinates()[1]);
+    assertNotNull(tweet.getCoordinates());
+    assertEquals(2, tweet.getCoordinates().getCoordinates().length);
+    assertEquals(lon, tweet.getCoordinates().getCoordinates()[0]);
+    assertEquals(lat, tweet.getCoordinates().getCoordinates()[1]);
   }
 
   @Test

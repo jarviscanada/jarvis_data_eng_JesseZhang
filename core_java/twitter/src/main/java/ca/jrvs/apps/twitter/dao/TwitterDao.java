@@ -90,7 +90,8 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
 
   private URI getPostUri(Tweet tweet) throws URISyntaxException {
     return new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUAL + URLEncoder.encode(
-        tweet.getText()));
+        tweet.getText())+AMPERSAND+"long="+tweet.getCoordinates().getCoordinates()[0]
+        +AMPERSAND+"lat="+tweet.getCoordinates().getCoordinates()[1]);
   }
 
 

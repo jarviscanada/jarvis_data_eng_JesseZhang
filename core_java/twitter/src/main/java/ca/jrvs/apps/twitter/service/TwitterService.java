@@ -40,7 +40,7 @@ public class TwitterService implements Service {
 
     double lon = tweet.getCoordinates().getCoordinates()[0];
     double lat = tweet.getCoordinates().getCoordinates()[1];
-    if (lon < -180 || lon > 180 || lat < -90 || lat > 90) {
+    if (lon < -180.0 || lon > 180.0 || lat < -90.0 || lat > 90.0) {
       throw new IllegalArgumentException("longitude or latitude in the tweet is out of range");
     }
 
