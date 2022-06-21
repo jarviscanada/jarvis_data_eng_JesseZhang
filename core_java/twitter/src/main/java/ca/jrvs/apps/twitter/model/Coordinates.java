@@ -2,19 +2,20 @@ package ca.jrvs.apps.twitter.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Coordinates {
 
-  private Float[] coordinates;
+  private Double[] coordinates;
   private String type;
 
 
-  public Float[] getCoordinates() {
+  public Double[] getCoordinates() {
     return coordinates;
   }
 
-  public void setCoordinates(Float[] coordinates) {
+  public void setCoordinates(Double[] coordinates) {
     this.coordinates = coordinates;
   }
 

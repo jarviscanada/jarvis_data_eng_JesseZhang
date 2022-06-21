@@ -35,7 +35,7 @@ public class TwitterHttpHelperTest extends TestCase {
   public void testHttpGet() throws IOException, URISyntaxException {
     setup();
     HttpResponse response2 = httpHelper.httpGet(
-        new URI("https://api.twitter.com/1.1/statuses/show.json?id=1050118621198921728"));
+        new URI("https://api.twitter.com/1.1/statuses/show.json?id=1050118621198921728&include_entities=false"));
     System.out.println(EntityUtils.toString(response2.getEntity()));
   }
 

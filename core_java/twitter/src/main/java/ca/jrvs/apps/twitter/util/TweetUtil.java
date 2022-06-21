@@ -5,12 +5,12 @@ import ca.jrvs.apps.twitter.model.Tweet;
 
 public class TweetUtil {
 
-  public static Tweet buildTweet(String text, Float lon, Float lat) {
+  public static Tweet buildTweet(String text, Double lon, Double lat) {
     Tweet tweet = new Tweet();
     Coordinates coordinates = new Coordinates();
     tweet.setCoordinates(coordinates);
     tweet.setText(text);
-    coordinates.setCoordinates(new Float[]{lon, lat});
+    coordinates.setCoordinates(new Double[]{lon, lat});
     coordinates.setType("Point");
 
     return tweet;

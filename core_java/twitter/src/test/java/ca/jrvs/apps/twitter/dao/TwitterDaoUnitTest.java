@@ -35,8 +35,8 @@ public class TwitterDaoUnitTest {
     //test failed request
     String hashTag = "#abc";
     String text = "@someone sometext " + hashTag + " " + System.currentTimeMillis();
-    Float lon = -1f;
-    Float lat = 1f;
+    Double lon = -1d;
+    Double lat = 1d;
     //exception is expected here
     when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("mock"));
     try {

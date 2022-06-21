@@ -18,7 +18,7 @@ public interface CrdDao<T, ID> {
    * @param id entity id
    * @return Tweet entity
    */
-  Tweet findById(long id);
+  Tweet findById(ID id);
 
   /**
    * Delete an entity(Tweet) by its ID
@@ -26,5 +26,5 @@ public interface CrdDao<T, ID> {
    * @param id of the entity to be deleted
    * @return deleted entity
    */
-  Tweet deleteById(long id);
+  Tweet deleteById(ID id);
 }

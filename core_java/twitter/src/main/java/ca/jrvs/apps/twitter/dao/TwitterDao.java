@@ -101,7 +101,7 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
    * @return Tweet entity
    */
   @Override
-  public Tweet findById(long id) {
+  public Tweet findById(ID id) {
     //Construct URI
     URI uri;
     try {
@@ -117,7 +117,7 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
     return parseResponseBody(response, HTTP_OK);
   }
 
-  private URI getGetUri(long id) throws URISyntaxException {
+  private URI getGetUri(ID id) throws URISyntaxException {
     return new URI(API_BASE_URI + SHOW_PATH + QUERY_SYM + "id" + EQUAL + id);
   }
 
@@ -128,7 +128,7 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
    * @return deleted entity
    */
   @Override
-  public Tweet deleteById(long id) {
+  public Tweet deleteById(ID id) {
     //Construct URI
     URI uri;
     try {
@@ -144,7 +144,7 @@ public class TwitterDao<T, ID> implements CrdDao<T, ID> {
     return parseResponseBody(response, HTTP_OK);
   }
 
-  private URI getDeleteUri(long id) throws URISyntaxException {
+  private URI getDeleteUri(ID id) throws URISyntaxException {
     return new URI(API_BASE_URI + DELETE_PATH + "/" + id + ".json");
   }
 

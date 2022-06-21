@@ -28,7 +28,7 @@ public class TwitterDaoIntTest extends TestCase {
     String hashTag = "#abc";
     String text =
         "create a tweet in integration test " + hashTag + " " + System.currentTimeMillis();
-    float lon = -1f, lat = 1f;
+    Double lon = -1d, lat = 1d;
     Tweet postTweet = TweetUtil.buildTweet(text, lon, lat);
     System.out.println(JsonUtil.toJson(postTweet, false, false));
     Tweet tweet = dao.create(postTweet);
