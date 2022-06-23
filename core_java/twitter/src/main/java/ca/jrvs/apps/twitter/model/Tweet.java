@@ -11,12 +11,12 @@ public class Tweet {
   // https://developer.twitter.com/en/docs/twitter-api/v1/data-dictionary/object-model/tweet  private Date created_at;
 
   private String created_at;
-  private long id;
+  private Long id;
   private String id_str;
   private String text;
   private Entities entities;
   private Coordinates coordinates;
-  private int retweet_count;
+  private Integer retweet_count;
   private Integer favorite_count;
   private Boolean favorited;
   private Boolean retweeted;
@@ -42,11 +42,11 @@ public class Tweet {
     this.text = text;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -74,11 +74,11 @@ public class Tweet {
     this.coordinates = coordinates;
   }
 
-  public int getRetweet_count() {
+  public Integer getRetweet_count() {
     return retweet_count;
   }
 
-  public void setRetweet_count(int retweet_count) {
+  public void setRetweet_count(Integer retweet_count) {
     this.retweet_count = retweet_count;
   }
 

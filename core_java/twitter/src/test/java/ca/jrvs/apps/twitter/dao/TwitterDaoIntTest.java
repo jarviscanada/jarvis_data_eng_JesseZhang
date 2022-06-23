@@ -52,12 +52,11 @@ public class TwitterDaoIntTest extends TestCase {
     assertFalse(tweet.getFavorited());
   }
 
-
-  @Test
-  public void testDeleteById() throws JsonProcessingException {
-
-    Tweet tweet = dao.deleteById(1537770774051885057L);
-    System.out.println(JsonUtil.toJson(tweet, false, false));
-    assertFalse(tweet.getFavorited());
-  }
+//  @Test
+//  public void testDeleteById() throws JsonProcessingException {
+//
+//    Tweet tweet = dao.deleteById(1537770774051885057L);
+//    System.out.println(JsonUtil.toJson(tweet, false, false));
+//    assertFalse(tweet.getFavorited());
+//  }
 }

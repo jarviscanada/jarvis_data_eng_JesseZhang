@@ -11,7 +11,6 @@ import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
 import ca.jrvs.apps.twitter.util.TweetUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -58,7 +57,8 @@ public class TwitterServiceIntTest {
             + "create a tweet from service but the text exceeds 140 characters "
             + "create a tweet from service but the text exceeds 140 characters "
             + "create a tweet from service but the text exceeds 140 characters "
-            + "create a tweet from service but the text exceeds 140 characters" + hashTag + " " + System.currentTimeMillis();
+            + "create a tweet from service but the text exceeds 140 characters" + hashTag + " "
+            + System.currentTimeMillis();
     Double lon = -1d, lat = 1d;
     Tweet postTweet = TweetUtil.buildTweet(text, lon, lat);
     System.out.println(JsonUtil.toJson(postTweet, false, false));
@@ -85,7 +85,7 @@ public class TwitterServiceIntTest {
 
   @Test
   public void showTweet() throws JsonProcessingException {
-    Tweet tweet = service.showTweet("210462857140252672", new String[]{"trim_user"});
+    Tweet tweet = service.showTweet("210462857140252672", new String[]{"favorited"});
     System.out.println(JsonUtil.toJson(tweet, false, false));
     assertFalse(tweet.getFavorited());
   }
@@ -99,18 +99,18 @@ public class TwitterServiceIntTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void showInvalidFieldTweet() throws JsonProcessingException {
-    Tweet tweet = service.showTweet("2104628571402526724123412341234",  new String []{"invalid"});
+    Tweet tweet = service.showTweet("2104628571402526724123412341234", new String[]{"invalid"});
     System.out.println(JsonUtil.toJson(tweet, false, false));
     assertFalse(tweet.getFavorited());
   }
 
-  @Test
-  public void deleteTweets() throws JsonProcessingException {
-    List<Tweet> tweets = service.deleteTweets(new String[]{"1537768655412396032", "1537767407481237504"});
-    System.out.println(JsonUtil.toJson(tweets.get(0), false, false));
-    System.out.println(JsonUtil.toJson(tweets.get(1), false, false));
-    assertFalse(tweets.get(0).getFavorited());
-    assertFalse(tweets.get(1).getFavorited());
-  }
+//  @Test
+//  public void deleteTweets() throws JsonProcessingException {
+//    List<Tweet> tweets = service.deleteTweets(new String[]{"1537768655412396032", "1537767407481237504"});
+//    System.out.println(JsonUtil.toJson(tweets.get(0), false, false));
+//    System.out.println(JsonUtil.toJson(tweets.get(1), false, false));
+//    assertFalse(tweets.get(0).getFavorited());
+//    assertFalse(tweets.get(1).getFavorited());
+//  }
 
 }

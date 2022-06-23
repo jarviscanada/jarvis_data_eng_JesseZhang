@@ -52,15 +52,75 @@ public class TwitterService implements Service {
 
     //check id and fields
     validateId(id);
-    StringBuilder query = new StringBuilder(id);
-    query.append(validateFields(fields));
+    if (fields != null) {
+      validateFields(fields);
+    }
 
     //show the tweet via dao
-    return dao.findById(query.toString());
+    Tweet tweet = dao.findById(id);
+
+    //set fields not in the list to null
+    return processTweetResponse(tweet, fields);
   }
 
 
-  private String validateFields(String[] fields) {
+  private void validateFields(String[] fields) {
+    if (fields != null) {
+      Set<String> field_words = new HashSet<>(Arrays.asList("created_at", "id",
+          "id_str", "text", "entities", "coordinates", "retweet_count", "favorite_count",
+          "favorited", "retweeted"));
+      for (String s : fields) {
+        if (!field_words.contains(s)) {
+          throw new IllegalArgumentException("filed(s) invalid");
+        }
+      }
+    }
+  }
+
+  private Tweet processTweetResponse(Tweet tweet, String[] fields) {
+    Tweet tweet_template = new Tweet();
+    if (fields != null) {
+      for (String field : fields) {
+        switch (field) {
+          case "created_at":
+            tweet_template.setCreated_at(tweet.getCreated_at());
+            break;
+          case "id":
+            tweet_template.setId(tweet.getId());
+            break;
+          case "id_str":
+            tweet_template.setId_str(tweet.getId_str());
+            break;
+          case "text":
+            tweet_template.setText(tweet.getText());
+            break;
+          case "entities":
+            tweet_template.setEntities(tweet.getEntities());
+            break;
+          case "coordinates":
+            tweet_template.setCoordinates(tweet.getCoordinates());
+            break;
+          case "retweet_count":
+            tweet_template.setRetweet_count(tweet.getRetweet_count());
+            break;
+          case "favorite_count":
+            tweet_template.setFavorite_count(tweet.getFavorite_count());
+            break;
+          case "favorited":
+            tweet_template.setFavorited(tweet.getFavorited());
+            break;
+          case "retweeted":
+            tweet_template.setRetweeted(tweet.getRetweeted());
+            break;
+        }
+      }
+      return tweet_template;
+    } else {
+      return tweet;
+    }
+  }
+
+  private String validateFields2(String[] fields) {
     StringBuilder query_fields = new StringBuilder();
     if (fields != null) {
       Set<String> field_words = new HashSet<>(Arrays.asList("trim_user", "include_my_retweet",

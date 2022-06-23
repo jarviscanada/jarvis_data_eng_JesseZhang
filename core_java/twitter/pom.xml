@@ -19,7 +19,10 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.test.skip>true</maven.test.skip>
   </properties>
+
+
 
   <!--dependencies-->
   <!--oauth 1.0 and httpclient4-->
@@ -59,5 +62,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
 
 </project>

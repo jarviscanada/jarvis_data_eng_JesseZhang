@@ -1,6 +1,6 @@
 package ca.jrvs.apps.twitter.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -46,7 +46,7 @@ public class TwitterServiceUnitTest {
     Double lon = -181d, lat = 1d;
     Tweet postTweet = TweetUtil.buildTweet(text, lon, lat);
     System.out.println(JsonUtil.toJson(postTweet, false, false));
-    when(dao.create(any())).thenReturn(new Tweet());
+//    when(dao.create(any())).thenReturn(new Tweet());
     Tweet tweet = service.postTweet(postTweet);
   }
 
@@ -59,20 +59,22 @@ public class TwitterServiceUnitTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void showInvalidTweet() {
-    when(dao.findById(any())).thenReturn(new Tweet());
+//    when(dao.findById(any())).thenReturn(new Tweet());
     service.showTweet("210462857140252672", new String[]{"invalid"});
   }
 
   @Test
   public void deleteValidTweets() {
     when(dao.deleteById(any())).thenReturn(new Tweet());
-    List<Tweet> tweets  = service.deleteTweets(new String[]{"210462857140252672", "1539018180282261517"});
+    List<Tweet> tweets = service.deleteTweets(
+        new String[]{"210462857140252672", "1539018180282261517"});
     assertNotNull(tweets);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void deleteInvalidTweets() {
-    when(dao.deleteById(any())).thenReturn(new Tweet());
-    List<Tweet> tweets  = service.deleteTweets(new String[]{"210462857140252672234235234523454", "1539018180282261517"});
+//    when(dao.deleteById(any())).thenReturn(new Tweet());
+    List<Tweet> tweets = service.deleteTweets(
+        new String[]{"210462857140252672234235234523454", "1539018180282261517"});
   }
 }
