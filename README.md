@@ -1,6 +1,6 @@
 # Jesse Zhang . Jarvis Consulting
 
-I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
+I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two interships in two companies. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
 
 ## Skills
 
@@ -56,10 +56,10 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 **South China University of Technology, Guangzhou, China (2010-2013)**, Master of Engineering - Power Electronics and Power Drives, School of Electric Power
 
-**Hunan University, Changsha, China (2006-2010)**, Bachelor of Engineering ? Electrical Engineering and Automation, College of Electrical and Information Engineering
+**Hunan University, Changsha, China (2006-2010)**, Bachelor of Engineering - Electrical Engineering and Automation, College of Electrical and Information Engineering
 - National Scholarship (2007), The First Prize Scholarship (2007, 2008), The Second Prize Scholarship (2009)
 
 
 ## Miscellaneous
-- Bicycling
+- Cycling: completed a one-month cycling trip (2,000km) from Chengdu to Lhasa in 2012
 - Volunteer for Generations, The Yellow Door, Montreal, QC (Jun 2018-Aug 2021): visiting the seniors in the downtown Montreal area once a week
