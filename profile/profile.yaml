@@ -5,7 +5,7 @@ github_repo_root_url: "https://github.com/jarviscanada/jarvis_data_eng_JesseZhan
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
+summary: "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two interships in two companies. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -111,7 +111,7 @@ education:
     awards_achievements:
   - school_name: "Hunan University, Changsha, China"
     duration: "2006-2010"
-    degree: "Bachelor of Engineering ? Electrical Engineering and Automation"
+    degree: "Bachelor of Engineering - Electrical Engineering and Automation"
     department: "College of Electrical and Information Engineering"
     awards_achievements:
       - "National Scholarship (2007), The First Prize Scholarship (2007, 2008), The Second Prize Scholarship (2009)"
@@ -128,5 +128,5 @@ others:
       # - ""
   - title: "Activities/Hobbies"
     bullets:
-      - "Bicycling"
+      - "Cycling: completed a one-month cycling trip (2,000km) from Chengdu to Lhasa in 2012"
       - "Volunteer for Generations, The Yellow Door, Montreal, QC (Jun 2018-Aug 2021): visiting the seniors in the downtown Montreal area once a week"
