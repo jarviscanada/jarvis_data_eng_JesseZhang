@@ -1,6 +1,6 @@
 # Jesse Zhang . Jarvis Consulting
 
-I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two interships in two companies. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
+I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two internships in two companies. One is being a QA writing Shell scripts, and the other is being a software developer focusing on testing codes using Junit. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
 
 ## Skills
 
@@ -19,9 +19,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/core_java)]:
       
-  - Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.
+  - Twitter App: Developed a command line Java App that allows users to search, post, and delete Tweets via official Twitter REST APIs. Different approaches were used including SpringBoot.
   - JDBC App: Utilized DAO Pattern to interact with the database to perform CRUD operations based on JDBC.
-  - Grep App: Implemented a Java app that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ.
+  - Grep App: Implemented a Java App that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/springboot)]: Not Started
 
@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2022-present)**: Implemented projects led by industry experts following the industry standard and using tools like  .......
+**Software Developer, Jarvis (2022-present)**: Implemented projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, etc; exercised Agile practices daily with the team throughout the projects.
 
 **Software Developer Co-op, Ericsson, Montreal, QC (Sep 2019-Dec 2019)**: Worked with one production team including design, development, maintenance and innovation; added and modified more than 5000 lines of codes for test cases, keeping the coverages on two back-end projects above 90%; technologies: Spring, Java, JUnit, Mockito, PowerMock, SonarQube, Git Bash, Gerrit, MongoDB, PostgreSQL.
 

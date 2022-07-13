@@ -48,9 +48,9 @@
     },
     {
       "description": [
-        "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam.",
+        "Twitter App: Developed a command line Java App that allows users to search, post, and delete Tweets via official Twitter REST APIs. Different approaches were used including SpringBoot.",
         "JDBC App: Utilized DAO Pattern to interact with the database to perform CRUD operations based on JDBC.",
-        "Grep App: Implemented a Java app that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ."
+        "Grep App: Implemented a Java App that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
@@ -94,7 +94,7 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Implemented projects led by industry experts following the industry standard and using tools like  .......",
+      "description": "Implemented projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, etc; exercised Agile practices daily with the team throughout the projects.",
       "duration": "2022-present",
       "title": "Software Developer"
     },
@@ -134,5 +134,5 @@
       "Git"
     ]
   },
-  "summary": "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two interships in two companies. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
+  "summary": "I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two internships in two companies. One is being a QA writing Shell scripts, and the other is being a software developer focusing on testing codes using Junit. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time."
 }
