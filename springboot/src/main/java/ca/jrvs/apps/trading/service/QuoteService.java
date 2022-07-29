@@ -4,6 +4,7 @@ import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import ca.jrvs.apps.trading.model.domain.Quote;
+import ca.jrvs.apps.trading.model.exception.ResourceNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.transaction.Transactional;
@@ -32,7 +33,7 @@ public class QuoteService {
    * Update quote table against IEX source - get all quote from the db - foreach ticker get iexQuote
    * - convert iexQuote to quote entity - persist quote to db
    *
-   * @throws ca.jrvs.apps.trading.dao.ResourceNotFoundException if ticker is not found from IEX
+   * @throws ResourceNotFoundException if ticker is not found from IEX
    * @throws org.springframework.dao.DataAccessException        if unable to retrieve data
    * @throws IllegalArgumentException                           for invalid input
    */

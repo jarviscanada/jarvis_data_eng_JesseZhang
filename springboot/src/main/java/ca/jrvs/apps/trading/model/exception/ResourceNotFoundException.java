@@ -1,4 +1,4 @@
-package ca.jrvs.apps.trading.dao;
+package ca.jrvs.apps.trading.model.exception;
 
 import org.springframework.dao.DataAccessException;
 
