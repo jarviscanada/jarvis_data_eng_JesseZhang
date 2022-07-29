@@ -37,16 +37,18 @@ public class QuoteService {
    * @throws org.springframework.dao.DataAccessException        if unable to retrieve data
    * @throws IllegalArgumentException                           for invalid input
    */
-  public void updateMarketData() {
+  public List<Quote> updateMarketData() {
 
     List<Quote> quotes = findAllQuotes();
+    List<Quote> updatedQuotes = new ArrayList<>();
     quotes.forEach(quote ->
     {
       IexQuote iexQuote = findIexQuoteByTicker(quote.getId());
       Quote updatedQuote = buildQuoteFromIexQuote(iexQuote);
+      updatedQuotes.add(updatedQuote);
       saveQuote(updatedQuote);
     });
-
+    return updatedQuotes;
   }
 
   /**
