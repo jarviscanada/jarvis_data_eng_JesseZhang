@@ -108,7 +108,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
   @Override
   public Optional<Quote> findById(String ticker) {
 
-    Optional<Quote> quote;
+    Optional<Quote> quote = Optional.empty();
     String selectSql = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COLUMN_NAME + " =?";
 
     try {
@@ -116,7 +116,6 @@ public class QuoteDao implements CrudRepository<Quote, String> {
           BeanPropertyRowMapper.newInstance(Quote.class), ticker));
     } catch (EmptyResultDataAccessException e) {
       logger.debug("Can't find ticker id:" + ticker);
-      return Optional.empty();
     }
 
     return quote;
