@@ -1,7 +1,6 @@
 package ca.jrvs.apps.trading.dao;
 
 import ca.jrvs.apps.trading.model.domain.Entity;
-import ca.jrvs.apps.trading.model.domain.Quote;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,15 +33,16 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
 
   /**
    * Save an entity and update auto-generated integer ID
+   *
    * @param entity must not be {@literal null}. to be saved
    * @return save entity
    */
-  public <S extends T> S save(S entity){
-    if(existsById(entity.getId())){
-      if(updateOne(entity) !=1){
+  public <S extends T> S save(S entity) {
+    if (existsById(entity.getId())) {
+      if (updateOne(entity) != 1) {
         throw new DataRetrievalFailureException("Unable to update quote");
       }
-    }else{
+    } else {
       addOne(entity);
     }
     return entity;
@@ -50,10 +50,11 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
 
   /**
    * helper method that saves one quote
+   *
    * @param entity
    * @param <S>
    */
-  private <S extends T> void addOne(S entity){
+  private <S extends T> void addOne(S entity) {
     SqlParameterSource parameterSource = new BeanPropertySqlParameterSource(entity);
 
     Number newId = getSimpleJdbcInsert().executeAndReturnKey(parameterSource);
@@ -69,12 +70,12 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
   @Override
   public Optional<T> findById(Integer id) {
     Optional<T> entity = Optional.empty();
-    String selectSql = "SELECT * FROM " +getTableName() + " WHERE "+getIdColumnName() +" =?";
+    String selectSql = "SELECT * FROM " + getTableName() + " WHERE " + getIdColumnName() + " =?";
 
-    try{
+    try {
       entity = Optional.ofNullable((T) getJdbcTemplate().queryForObject(selectSql,
           BeanPropertyRowMapper.newInstance(getEntityClass()), id));
-    }catch (IncorrectResultSizeDataAccessException e){
+    } catch (IncorrectResultSizeDataAccessException e) {
       logger.debug("Can't find trader id:" + id, e);
     }
     return entity;
@@ -115,7 +116,7 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
   @Override
   public long count() {
     String selectSql = "SELECT COUNT(*) FROM " + getTableName();
-    Object nums =  getJdbcTemplate()
+    Object nums = getJdbcTemplate()
         .queryForObject(selectSql, Long.class);
     if (nums == null) {
       return 0;
@@ -132,6 +133,7 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
     getJdbcTemplate().update(deleteSql, integer);
   }
 
+
   @Override
   public void deleteAll() {
     String deleteSql = "DELETE FROM " + getTableName();
@@ -142,8 +144,6 @@ public abstract class JdbcCrudDao<T extends Entity<Integer>> implements CrudRepo
   public <S extends T> List<S> saveAll(Iterable<S> quotes) {
     throw new UnsupportedOperationException("Not implemented");
   }
-
-
 
 //  @Override
 //  public void delete(T entity) {

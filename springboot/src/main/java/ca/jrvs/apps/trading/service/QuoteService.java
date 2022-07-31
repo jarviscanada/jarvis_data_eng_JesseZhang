@@ -33,9 +33,9 @@ public class QuoteService {
    * Update quote table against IEX source - get all quote from the db - foreach ticker get iexQuote
    * - convert iexQuote to quote entity - persist quote to db
    *
-   * @throws ResourceNotFoundException if ticker is not found from IEX
-   * @throws org.springframework.dao.DataAccessException        if unable to retrieve data
-   * @throws IllegalArgumentException                           for invalid input
+   * @throws ResourceNotFoundException                   if ticker is not found from IEX
+   * @throws org.springframework.dao.DataAccessException if unable to retrieve data
+   * @throws IllegalArgumentException                    for invalid input
    */
   public List<Quote> updateMarketData() {
 

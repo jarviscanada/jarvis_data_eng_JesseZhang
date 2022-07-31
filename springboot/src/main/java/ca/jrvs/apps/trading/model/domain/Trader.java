@@ -1,10 +1,6 @@
-
 package ca.jrvs.apps.trading.model.domain;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import javax.annotation.Generated;
 
 public class Trader implements Entity<Integer> {
 
@@ -14,7 +10,7 @@ public class Trader implements Entity<Integer> {
   private String firstName;
   private Integer id;
   private String lastName;
-  private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
   public String getCountry() {
     return country;
@@ -64,12 +60,5 @@ public class Trader implements Entity<Integer> {
     this.lastName = lastName;
   }
 
-  public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-  }
-
-  public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
-  }
 
 }

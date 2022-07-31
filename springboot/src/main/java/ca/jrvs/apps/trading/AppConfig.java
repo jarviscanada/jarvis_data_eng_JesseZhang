@@ -37,18 +37,19 @@ public class AppConfig {
 
   @Bean
   public DataSource dataSource() {
-    jdbcUrl =
-        "jdbc:postgresql://" +
-            System.getenv("PSQL_HOST") + ":" +
-            System.getenv("PSQL_PORT") +
-            "/" +
-            System.getenv("PSQL_DB");
+//    jdbcUrl =
+//        "jdbc:postgresql://" +
+//            System.getenv("PSQL_HOST") + ":" +
+//            System.getenv("PSQL_PORT") +
+//            "/" +
+//            System.getenv("PSQL_DB");
     user = System.getenv("PSQL_USER");
     password = System.getenv("PSQL_PASSWORD");
 
     //Never log your credentials/secrets. Use IDE debugger instead
     BasicDataSource basicDataSource = new BasicDataSource();
-    basicDataSource.setUrl(jdbcUrl);
+    String url = System.getenv("PSQL_URL");
+    basicDataSource.setUrl(url);
     basicDataSource.setUsername(user);
     basicDataSource.setPassword(password);
     return basicDataSource;

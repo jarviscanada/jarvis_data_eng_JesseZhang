@@ -22,10 +22,11 @@ public class QuoteDaoIntTest {
   @Autowired
   private QuoteDao quoteDao;
 
-  private Quote savedQuote = new Quote();
+  private Quote savedQuote;
 
   @Before
   public void insertOne() {
+    savedQuote = new Quote();
     savedQuote.setAskPrice(10d);
     savedQuote.setAskSize(10);
     savedQuote.setBidPrice(10.2d);
