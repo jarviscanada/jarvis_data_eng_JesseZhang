@@ -1,3 +1,4 @@
+
 -- psql -h PSQL_HOST -p 5432 -U postgres jrvstrading -f schema.sql
 -- Drop table
 
