@@ -34,7 +34,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2022-present)**: Implemented various projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, IntelliJ, etc; exercised Agile practices daily with the team members throughout the projects and played the team lead role for one sprint. Followed the GitFlow model to organize the version control.
+**Software Developer, Jarvis (2022-present)**: Implemented various projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, IntelliJ, etc; exercised Agile practices daily with the team members throughout the projects and played the team lead role for one sprint; followed the GitFlow model to organize the version control.
 
 **Software Developer Co-op, Ericsson, Montreal, QC (Sep 2019-Dec 2019)**: Worked with one production team including design, development, maintenance and innovation; added and modified more than 5000 lines of codes for test cases, keeping the coverages on two back-end projects above 90%; technologies: Spring, Java, JUnit, Mockito, PowerMock, SonarQube, Git Bash, Gerrit, MongoDB, PostgreSQL.
 
