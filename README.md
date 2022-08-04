@@ -27,7 +27,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 
 ## Highlighted Projects
-**Compiler design** [[GitHub](https://github.com/natsumeqi/COMP442-compiler-design)]: Designed and implemented a compiler for a simple programming language: built a scanner based on given lexical specifications; built a syntactic analyzer for the language specified by the grammar; implemented a semantic analyzer using the visitor pattern; implemented a code generation phase. Technologies: Java, Maven, UNIX, C, Git, dot, Jsoup.
+**Compiler design** [[GitHub](https://github.com/natsumeqi/COMP442-compiler-design)]: Designed and implemented a compiler for a simple programming language: built a scanner based on given lexical specifications; built a syntactic analyzer for the language specified by the grammar; implemented a semantic analyzer using the visitor pattern; implemented a code generation phase. Technologies: Java, Maven, UNIX, C, Git, dot, and Jsoup.
 
 **Secure Library Book Reservation System** [[GitHub](https://github.com/Tianxiang-Concordia/SOEN487Project2)]: Implemented RESTful API for the business function. Technologies: Java, Maven, SQLite, JAR-RS(Jersey), Vue, Git, Postman, Curl, and JSON.
 

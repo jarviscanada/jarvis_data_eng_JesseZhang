@@ -70,7 +70,7 @@ highlighted_projects:
     #URL is optional
     git_url: "https://github.com/natsumeqi/COMP442-compiler-design"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Designed and implemented a compiler for a simple programming language: built a scanner based on given lexical specifications; built a syntactic analyzer for the language specified by the grammar; implemented a semantic analyzer using the visitor pattern; implemented a code generation phase. Technologies: Java, Maven, UNIX, C, Git, dot, Jsoup."
+    description: "Designed and implemented a compiler for a simple programming language: built a scanner based on given lexical specifications; built a syntactic analyzer for the language specified by the grammar; implemented a semantic analyzer using the visitor pattern; implemented a code generation phase. Technologies: Java, Maven, UNIX, C, Git, dot, and Jsoup."
   - name: "Secure Library Book Reservation System"
     git_url: "https://github.com/Tianxiang-Concordia/SOEN487Project2"
     description: "Implemented RESTful API for the business function. Technologies: Java, Maven, SQLite, JAR-RS(Jersey), Vue, Git, Postman, Curl, and JSON."
