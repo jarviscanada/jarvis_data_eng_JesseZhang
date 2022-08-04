@@ -1,14 +1,14 @@
 # Jesse Zhang . Jarvis Consulting
 
-I am Yanqi Jesse Zhang, who graduated from Concordia University with a major in Computer Science and two internships in two companies. One is being a QA writing Shell scripts, and the other is being a software developer focusing on testing codes using Junit. Prior to the study at Concordia, I also had an academic background in electrical engineering and experience in the industry of electric design. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies, especially to make connections between theory and practice and to contribute to an organization at the same time.
+I graduated from Concordia University with a Bachelor's degree in Computer Science. I also had an academic background in electrical engineering and experience in the industry of electric design. During my study at Concordia, I did two internships in two companies. First I worked as a QA at NetGovern and also wrote Shell scripts on Linux dealing with annotation data. Second I joined a development team at Ericsson where I focused on testing Java codes using Junit, Mockito and PowerMock. Having a deep interest in being a lifelong learner, I found that being a good software developer can provide me with great opportunities to learn and apply new technologies. Overall, I am excited to develop Software, solve challenging problems and contribute to a team.
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git
+**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, Junit
 
-**Competent:** JavaScript, HTML/CSS, IntelliJ, Spring, Vim
+**Competent:** HTML/CSS, IntelliJ, Spring, Vim, Docker
 
-**Familiar:** Python, React, Docker, C++, PHP
+**Familiar:** Python, React, JavaScript, C++, PHP
 
 ## Jarvis Projects
 
@@ -19,30 +19,22 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_JesseZhang
 
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/core_java)]:
       
-  - Twitter App: Developed a command line Java App that allows users to search, post, and delete Tweets via official Twitter REST APIs. Different approaches were used including SpringBoot.
-  - JDBC App: Utilized DAO Pattern to interact with the database to perform CRUD operations based on JDBC.
-  - Grep App: Implemented a Java App that mimics Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expression, docker, IntelliJ.
+  - Twitter App: Developed a command-line Java application that allows users to search, post, and delete Tweets via official Twitter REST APIs. Followed the MVC architecture, Maven was used for the project build, SpringBoot for dependency management, JUnit and Mockito for testing, and Docker for deployment.
+  - JDBC App: Utilized DAO pattern to interact with the database to perform CRUD operations based on JDBC.
+  - Grep App: Implemented a Java application that mimics the Linux grep command. It allows users to search matching strings recursively from files in a given directory, and output matched lines to a specified file. Technologies used: Java 8, slf4j, JUnit 4, lambda expressions, docker, and IntelliJ.
 
-**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/springboot)]: Not Started
-
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/python_data_anlytics)]: Not Started
-
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/hadoop)]: Not Started
-
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/spark)]: Not Started
-
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/cloud_devops)]: Not Started
+**Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_JesseZhang/tree/master/springboot)]: Built a trading platform that allows users to manage client profiles and accounts, and execute security orders via a REST API. It also fetches free market data (stock price) from a IEX Cloud service and updates corresponding data in the PostreSQL database. The application was developed using Java and SpringBoot, managed by Maven, tested with JUnit, Swagger and postman, deployed by Docker.
 
 
 ## Highlighted Projects
 **Compiler design** [[GitHub](https://github.com/natsumeqi/COMP442-compiler-design)]: Designed and implemented a compiler for a simple programming language: built a scanner based on given lexical specifications; built a syntactic analyzer for the language specified by the grammar; implemented a semantic analyzer using the visitor pattern; implemented a code generation phase. Technologies: Java, Maven, UNIX, C, Git, dot, Jsoup.
 
-**Secure Library Book Reservation System** [[GitHub](https://github.com/Tianxiang-Concordia/SOEN487Project2)]: Implemented RESTful API for the business function. Technologies: Java, Maven, SQLite, JAR-RS(Jersey), Vue, Git, Postman, Curl, JSON.
+**Secure Library Book Reservation System** [[GitHub](https://github.com/Tianxiang-Concordia/SOEN487Project2)]: Implemented RESTful API for the business function. Technologies: Java, Maven, SQLite, JAR-RS(Jersey), Vue, Git, Postman, Curl, and JSON.
 
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2022-present)**: Implemented projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, etc; exercised Agile practices daily with the team throughout the projects.
+**Software Developer, Jarvis (2022-present)**: Implemented various projects led by industry experts following the industry standard and using tools like SpringBoot, Maven, Docker, Git, Linux/Bash, PostgreSQL, IntelliJ, etc; exercised Agile practices daily with the team members throughout the projects and played the team lead role for one sprint. Followed the GitFlow model to organize the version control.
 
 **Software Developer Co-op, Ericsson, Montreal, QC (Sep 2019-Dec 2019)**: Worked with one production team including design, development, maintenance and innovation; added and modified more than 5000 lines of codes for test cases, keeping the coverages on two back-end projects above 90%; technologies: Spring, Java, JUnit, Mockito, PowerMock, SonarQube, Git Bash, Gerrit, MongoDB, PostgreSQL.
 
