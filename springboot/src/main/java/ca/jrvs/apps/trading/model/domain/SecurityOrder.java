@@ -5,11 +5,15 @@ public class SecurityOrder implements Entity<Integer> {
 
   private Integer id;
   private Integer account_id;
-  private String status;
+  private Status status;
   private String ticker;
   private Integer size;
   private Float price;
   private String notes;
+
+  public enum Status {
+    FILLED, CANCELED
+  }
 
   @Override
   public Integer getId() {
@@ -29,11 +33,11 @@ public class SecurityOrder implements Entity<Integer> {
     this.account_id = account_id;
   }
 
-  public String getStatus() {
+  public Status getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(Status status) {
     this.status = status;
   }
 

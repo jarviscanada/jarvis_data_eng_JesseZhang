@@ -19,7 +19,9 @@ import org.springframework.stereotype.Repository;
 public class PositionDao implements CrudRepository<Position, Integer> {
 
   private static final String TABLE_NAME = "position";
-  private static final String ID_COLUMN_NAME = "account_id";
+  private static final String ID_COLUMN_NAME_1 = "account_id";
+  private static final String ID_COLUMN_NAME_2 = "ticker";
+
 
   private static final Logger logger = LoggerFactory.getLogger(PositionDao.class);
   private JdbcTemplate jdbcTemplate;
@@ -45,7 +47,7 @@ public class PositionDao implements CrudRepository<Position, Integer> {
   @Override
   public Optional<Position> findById(Integer integer) {
     Optional<Position> position = Optional.empty();
-    String selectSql = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COLUMN_NAME + " =?";
+    String selectSql = "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COLUMN_NAME_1 + " =?";
 
     try {
       position = Optional.ofNullable(jdbcTemplate.queryForObject(selectSql,
@@ -56,6 +58,24 @@ public class PositionDao implements CrudRepository<Position, Integer> {
 
     return position;
   }
+
+
+  public Optional<Position> findByIds(Integer integer, String ticker) {
+    Optional<Position> position = Optional.empty();
+    String selectSql =
+        "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COLUMN_NAME_1 + " =? AND" + ID_COLUMN_NAME_2
+            + " =?";
+
+    try {
+      position = Optional.ofNullable(jdbcTemplate.queryForObject(selectSql,
+          BeanPropertyRowMapper.newInstance(Position.class), integer, ticker));
+    } catch (EmptyResultDataAccessException e) {
+      logger.debug("Can't find account id:" + integer);
+    }
+
+    return position;
+  }
+
 
   @Override
   public boolean existsById(Integer integer) {

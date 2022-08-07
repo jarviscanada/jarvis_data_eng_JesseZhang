@@ -27,12 +27,12 @@ public class QuoteDaoIntTest {
   @Before
   public void insertOne() {
     savedQuote = new Quote();
-    savedQuote.setAskPrice(10d);
+    savedQuote.setAskPrice(10f);
     savedQuote.setAskSize(10);
-    savedQuote.setBidPrice(10.2d);
+    savedQuote.setBidPrice(10.2f);
     savedQuote.setBidSize(10);
     savedQuote.setId("aapl");
-    savedQuote.setLastPrice(10.1d);
+    savedQuote.setLastPrice(10.1f);
     quoteDao.save(savedQuote);
   }
 

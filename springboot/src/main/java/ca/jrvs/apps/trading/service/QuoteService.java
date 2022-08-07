@@ -62,10 +62,10 @@ public class QuoteService {
 
     Quote quote = new Quote();
     quote.setTicker(iexQuote.getSymbol());
-    quote.setLastPrice(iexQuote.getLatestPrice());
-    quote.setBidPrice(iexQuote.getIexBidPrice());
+    quote.setLastPrice((float) iexQuote.getLatestPrice());
+    quote.setBidPrice((float) iexQuote.getIexBidPrice());
     quote.setBidSize(iexQuote.getIexBidSize());
-    quote.setAskPrice(iexQuote.getIexAskPrice());
+    quote.setAskPrice((float) iexQuote.getIexAskPrice());
     quote.setAskSize(iexQuote.getIexAskSize());
 //    System.out.println(quote.toString());
     return quote;

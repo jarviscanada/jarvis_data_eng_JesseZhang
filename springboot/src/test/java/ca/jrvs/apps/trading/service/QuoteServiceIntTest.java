@@ -43,20 +43,20 @@ public class QuoteServiceIntTest {
   @Test
   public void updateMarketData() {
     Quote savedQuote = new Quote();
-    savedQuote.setAskPrice(10d);
+    savedQuote.setAskPrice(10f);
     savedQuote.setAskSize(10);
-    savedQuote.setBidPrice(10.2d);
+    savedQuote.setBidPrice(10.2f);
     savedQuote.setBidSize(10);
     savedQuote.setId("aapl");
-    savedQuote.setLastPrice(10.1d);
+    savedQuote.setLastPrice(10.1f);
     quoteDao.save(savedQuote);
     savedQuote = new Quote();
     savedQuote.setId("msft");
-    savedQuote.setAskPrice(20d);
+    savedQuote.setAskPrice(20f);
     savedQuote.setAskSize(20);
-    savedQuote.setBidPrice(20.2d);
+    savedQuote.setBidPrice(20.2f);
     savedQuote.setBidSize(20);
-    savedQuote.setLastPrice(20.1d);
+    savedQuote.setLastPrice(20.1f);
     quoteDao.save(savedQuote);
     quoteService.updateMarketData();
     List<Quote> quotes = quoteService.findAllQuotes();
@@ -87,12 +87,12 @@ public class QuoteServiceIntTest {
   @Test
   public void findAllQuotes() {
     Quote savedQuote = new Quote();
-    savedQuote.setAskPrice(10d);
+    savedQuote.setAskPrice(10f);
     savedQuote.setAskSize(10);
-    savedQuote.setBidPrice(10.2d);
+    savedQuote.setBidPrice(10.2f);
     savedQuote.setBidSize(10);
     savedQuote.setId("aapl");
-    savedQuote.setLastPrice(10.1d);
+    savedQuote.setLastPrice(10.1f);
     quoteDao.save(savedQuote);
     List<Quote> quotes = quoteService.findAllQuotes();
     assertEquals(1, quotes.size());

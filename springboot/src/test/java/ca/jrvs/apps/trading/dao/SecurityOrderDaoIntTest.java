@@ -6,6 +6,7 @@ import ca.jrvs.apps.trading.TestConfig;
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
+import ca.jrvs.apps.trading.model.domain.SecurityOrder.Status;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import java.util.List;
 import org.junit.After;
@@ -42,12 +43,12 @@ public class SecurityOrderDaoIntTest {
   @Before
   public void insertOne() {
     savedQuote = new Quote();
-    savedQuote.setAskPrice(10d);
+    savedQuote.setAskPrice(10f);
     savedQuote.setAskSize(10);
-    savedQuote.setBidPrice(10.2d);
+    savedQuote.setBidPrice(10.2f);
     savedQuote.setBidSize(10);
     savedQuote.setId("aapl");
-    savedQuote.setLastPrice(10.1d);
+    savedQuote.setLastPrice(10.1f);
     quoteDao.save(savedQuote);
 
     savedTrader = new Trader();
@@ -68,7 +69,7 @@ public class SecurityOrderDaoIntTest {
     savedSecurityOrder = new SecurityOrder();
     savedSecurityOrder.setAccount_id(1);
     savedSecurityOrder.setTicker("AAPL");
-    savedSecurityOrder.setStatus("FILLED");
+    savedSecurityOrder.setStatus(Status.FILLED);
     savedSecurityOrder.setNotes("integration test");
     savedSecurityOrder.setPrice(22.3F);
     savedSecurityOrder.setSize(100);

@@ -3,16 +3,16 @@ package ca.jrvs.apps.trading.model.domain;
 public class Quote implements Entity<String> {
 
   private String ticker;
-  private Double lastPrice;
-  private Double bidPrice;
+  private Float lastPrice;
+  private Float bidPrice;
   private Integer bidSize;
-  private Double askPrice;
+  private Float askPrice;
   private Integer askSize;
 
   public Quote() {
   }
 
-  public Quote(String ticker, Double lastPrice, Double bidPrice, Integer bidSize, Double askPrice,
+  public Quote(String ticker, Float lastPrice, Float bidPrice, Integer bidSize, Float askPrice,
       Integer askSize) {
     this.ticker = ticker;
     this.lastPrice = lastPrice;
@@ -40,19 +40,19 @@ public class Quote implements Entity<String> {
     this.ticker = ticker;
   }
 
-  public Double getLastPrice() {
+  public Float getLastPrice() {
     return lastPrice;
   }
 
-  public void setLastPrice(Double lastPrice) {
+  public void setLastPrice(Float lastPrice) {
     this.lastPrice = lastPrice;
   }
 
-  public Double getBidPrice() {
+  public Float getBidPrice() {
     return bidPrice;
   }
 
-  public void setBidPrice(Double bidPrice) {
+  public void setBidPrice(Float bidPrice) {
     this.bidPrice = bidPrice;
   }
 
@@ -64,11 +64,11 @@ public class Quote implements Entity<String> {
     this.bidSize = bidSize;
   }
 
-  public Double getAskPrice() {
+  public Float getAskPrice() {
     return askPrice;
   }
 
-  public void setAskPrice(Double askPrice) {
+  public void setAskPrice(Float askPrice) {
     this.askPrice = askPrice;
   }
 
