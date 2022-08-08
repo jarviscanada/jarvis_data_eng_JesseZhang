@@ -44,6 +44,7 @@ public class PositionDaoIntTest {
   private Account savedAccount;
   private Quote savedQuote;
   private SecurityOrder savedSecurityOrder;
+  private SecurityOrder savedSecurityOrder2;
 
 
   @Before
@@ -57,6 +58,14 @@ public class PositionDaoIntTest {
     savedQuote.setLastPrice(10.1f);
     quoteDao.save(savedQuote);
 
+    savedQuote.setAskPrice(20f);
+    savedQuote.setAskSize(20);
+    savedQuote.setBidPrice(20.2f);
+    savedQuote.setBidSize(20);
+    savedQuote.setId("MSFT");
+    savedQuote.setLastPrice(20.1f);
+    quoteDao.save(savedQuote);
+
     savedTrader = new Trader();
     savedTrader.setCountry("voluptate");
     savedTrader.setDob(new java.util.Date("10/10/2009"));
@@ -67,7 +76,7 @@ public class PositionDaoIntTest {
     traderDao.save(savedTrader);
 
     savedAccount = new Account();
-    savedAccount.setId(10);
+    savedAccount.setId(1);
     savedAccount.setAmount(100.0F);
     savedAccount.setTrader_id(1);
     accountDao.save(savedAccount);
@@ -77,9 +86,20 @@ public class PositionDaoIntTest {
     savedSecurityOrder.setTicker("AAPL");
     savedSecurityOrder.setStatus(Status.FILLED);
     savedSecurityOrder.setNotes("integration test");
-    savedSecurityOrder.setPrice(22.0F);
+    savedSecurityOrder.setPrice(10.1F);
     savedSecurityOrder.setSize(100);
     securityOrderDao.save(savedSecurityOrder);
+
+  savedSecurityOrder2 = new SecurityOrder();
+    savedSecurityOrder2.setAccount_id(1);
+    savedSecurityOrder2.setTicker("MSFT");
+    savedSecurityOrder2.setStatus(Status.FILLED);
+    savedSecurityOrder2.setNotes("integration test");
+    savedSecurityOrder2.setPrice(20.1F);
+    savedSecurityOrder2.setSize(100);
+    securityOrderDao.save(savedSecurityOrder2);
+
+
 
   }
 
@@ -87,6 +107,7 @@ public class PositionDaoIntTest {
   @After
   public void deleteOne() {
     securityOrderDao.deleteById(savedSecurityOrder.getId());
+    securityOrderDao.deleteById(savedSecurityOrder2.getId());
     accountDao.deleteById(savedAccount.getId());
     traderDao.deleteById(savedTrader.getId());
     quoteDao.deleteById(savedQuote.getId());
@@ -96,7 +117,14 @@ public class PositionDaoIntTest {
   @Test
   public void findAllTest() {
     Iterable<Position> positionList = positionDao.findAll();
-    assertEquals(1, ((List<Position>) positionList).size());
+    assertEquals(2, ((List<Position>) positionList).size());
+  }
+
+
+  @Test
+  public void findAllByAccountIDTest() {
+    Iterable<Position> positionList = positionDao.findAllByAccountId(1);
+    assertEquals(2, ((List<Position>) positionList).size());
   }
 
 

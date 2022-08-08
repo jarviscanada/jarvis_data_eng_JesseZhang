@@ -60,6 +60,22 @@ public class PositionDao implements CrudRepository<Position, Integer> {
   }
 
 
+  public Iterable<Position> findAllByAccountId(Integer integer) {
+    List<Position> positions = null;
+    String selectSql =
+        "SELECT * FROM " + TABLE_NAME + " WHERE " + ID_COLUMN_NAME_1 + " =?";
+
+    try {
+      positions = jdbcTemplate
+          .query(selectSql, BeanPropertyRowMapper.newInstance(Position.class), integer);
+    } catch (EmptyResultDataAccessException e) {
+      logger.debug("Can't find account id:" + integer);
+    }
+
+    return positions;
+  }
+
+
   public Optional<Position> findByIds(Integer integer, String ticker) {
     Optional<Position> position = Optional.empty();
     String selectSql =
