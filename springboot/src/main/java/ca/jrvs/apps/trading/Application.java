@@ -1,9 +1,12 @@
 package ca.jrvs.apps.trading;
 
 import ca.jrvs.apps.trading.service.QuoteService;
+import java.util.Arrays;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,8 +21,8 @@ public class Application implements CommandLineRunner {
 
   private Logger logger = LoggerFactory.getLogger(Application.class);
 
-//  @Value("${app.init.dailyList}")
-//  private String[] initDailyList;
+  @Value("${app.init.dailyList}")
+  private String[] initDailyList;
 
   @Autowired
   private QuoteService quoteService;
@@ -31,6 +34,6 @@ public class Application implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-
+    quoteService.saveQuotes(Arrays.asList(initDailyList));
   }
 }
