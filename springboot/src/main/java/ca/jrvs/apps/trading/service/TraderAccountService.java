@@ -6,8 +6,11 @@ import ca.jrvs.apps.trading.dao.SecurityOrderDao;
 import ca.jrvs.apps.trading.dao.TraderDao;
 import ca.jrvs.apps.trading.model.domain.Account;
 import ca.jrvs.apps.trading.model.domain.Position;
+import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.domain.Trader;
 import ca.jrvs.apps.trading.model.view.TraderAccountView;
+import java.util.List;
+import org.hibernate.validator.internal.constraintvalidators.bv.number.sign.PositiveOrZeroValidatorForNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,28 +70,31 @@ public class TraderAccountService {
    */
   public void deleteTraderById(Integer traderId) {
 
-    if (traderId == null || !traderDao.existsById(traderId)) {
-      throw new IllegalArgumentException("tradeId is null or not found");
-    }
+    checkTrader(traderId);
 
     Account account = null;
-    if (accountDao.findById(traderId).isPresent()) {
-      account = accountDao.findById(traderId).get();
+    if (accountDao.findByTraderId(traderId).isPresent()) {
+      account = accountDao.findByTraderId(traderId).get();
     }
 
-    assert account != null;
     if (account.getAmount() != 0) {
       throw new IllegalArgumentException("there is still balance in the account");
     }
 
-    Position position;
-    if (positionDao.findById(account.getId()).isPresent()) {
-      throw new IllegalArgumentException("there is still open position");
+    List<Position> positionList = (List<Position>) positionDao.findAllByAccountId(account.getId());
+    for(Position position: positionList){
+      if(position.getPosition()!=0){
+        throw new IllegalArgumentException("there is still open position");
+      }
     }
 
-    securityOrderDao.deleteByAccountId(account.getId());
-    accountDao.deleteById(account.getId());
-    traderDao.deleteById(traderId);
+    List<SecurityOrder> securityOrderList = securityOrderDao.findAllByAccountId(account.getId());
+    for(SecurityOrder securityOrder: securityOrderList){
+      securityOrderDao.delete(securityOrder);
+    }
+
+    accountDao.findById(account.getId()).ifPresent(d->accountDao.deleteById(d.getId()));
+    traderDao.findById(traderId).ifPresent(d->traderDao.deleteById(traderId));
 
   }
 
@@ -104,9 +110,7 @@ public class TraderAccountService {
    */
   public Account deposit(Integer traderId, Double fund) {
 
-    if (traderId == null || !traderDao.existsById(traderId)) {
-      throw new IllegalArgumentException("tradeId is null or not found");
-    }
+    checkTrader(traderId);
 
     if (fund <= 0) {
       throw new IllegalArgumentException("fund must be greater than 0");
@@ -140,9 +144,7 @@ public class TraderAccountService {
    */
   public Account withdraw(Integer traderId, Double fund) {
 
-    if (traderId == null || !traderDao.existsById(traderId)) {
-      throw new IllegalArgumentException("tradeId is null or not found");
-    }
+    checkTrader(traderId);
 
     if (fund <= 0) {
       throw new IllegalArgumentException("fund must be greater than 0");
@@ -170,5 +172,10 @@ public class TraderAccountService {
 
   }
 
+  private void checkTrader(Integer traderId) {
+    if (traderId == null || !traderDao.existsById(traderId)) {
+      throw new IllegalArgumentException("tradeId is null or not found");
+    }
+  }
 
 }

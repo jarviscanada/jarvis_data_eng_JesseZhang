@@ -1,10 +1,14 @@
 package ca.jrvs.apps.trading.dao;
 
+import ca.jrvs.apps.trading.model.domain.Position;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
+import java.util.List;
 import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
@@ -59,7 +63,8 @@ public class SecurityOrderDao extends JdbcCrudDao<SecurityOrder> {
 
   @Override
   public void delete(SecurityOrder entity) {
-    throw new UnsupportedOperationException("Not implemented");
+    String deleteSql = "DELETE FROM " + getTableName() + " WHERE "+ID_COLUMN+" =?";
+    getJdbcTemplate().update(deleteSql, entity.getId());
   }
 
   @Override
@@ -67,8 +72,19 @@ public class SecurityOrderDao extends JdbcCrudDao<SecurityOrder> {
     throw new UnsupportedOperationException("Not implemented");
   }
 
-  public void deleteByAccountId(Integer integer) {
-    String deleteSql = "DELETE FROM " + getTableName() + " WHERE account_id=?";
-    getJdbcTemplate().update(deleteSql, integer);
+  public List<SecurityOrder> findAllByAccountId(Integer integer){
+    List<SecurityOrder> securityOrders = null;
+    String selectSql =
+        "SELECT * FROM " + TABLE_NAME + " WHERE account_id =?";
+
+    try {
+      securityOrders = jdbcTemplate
+          .query(selectSql, BeanPropertyRowMapper.newInstance(SecurityOrder.class), integer);
+    } catch (EmptyResultDataAccessException e) {
+      logger.debug("Can't find account id:" + integer);
+    }
+
+    return securityOrders;
   }
+
 }

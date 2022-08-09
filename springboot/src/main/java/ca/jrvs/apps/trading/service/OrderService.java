@@ -126,8 +126,10 @@ public class OrderService {
     Float price = quoteDao.findById(ticker).get().getLastPrice();
     securityOrder.setPrice(price);
 
-    Integer totalSize = positionDao.findByIds(account.getId(), ticker).get().getSize();
+    Integer totalSize = positionDao.findByIds(account.getId(), ticker).get().getPosition();
 
+//    System.out.println(positionDao.findByIds(account.getId(), ticker).get().toString());
+//    System.out.println("totalsize: "+totalSize);
     Float amount = account.getAmount();
     if (size > totalSize) {
       securityOrder.setStatus(Status.CANCELED);

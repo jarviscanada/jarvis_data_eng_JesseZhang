@@ -4,7 +4,7 @@ public class Position implements Entity<Integer> {
 
   private Integer account_id;
   private String ticker;
-  private Integer size;
+  private Integer position;
 
   public Integer getAccount_id() {
     return account_id;
@@ -22,12 +22,12 @@ public class Position implements Entity<Integer> {
     this.ticker = ticker;
   }
 
-  public Integer getSize() {
-    return size;
+  public Integer getPosition() {
+    return position;
   }
 
-  public void setSize(Integer size) {
-    this.size = size;
+  public void setPosition(Integer position) {
+    this.position = position;
   }
 
   @Override
@@ -38,5 +38,14 @@ public class Position implements Entity<Integer> {
   @Override
   public void setId(Integer integer) {
     this.account_id = integer;
+  }
+
+  @Override
+  public String toString() {
+    return "Position{" +
+        "account_id=" + account_id +
+        ", ticker='" + ticker + '\'' +
+        ", position=" + position +
+        '}';
   }
 }
