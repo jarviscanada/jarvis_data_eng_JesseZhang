@@ -65,7 +65,7 @@ public class OrderServiceTest {
     quote.setLastPrice(50f);
 
     Position position = new Position();
-    position.setSize(20);
+    position.setPosition(20);
 
     SecurityOrder securityOrder = new SecurityOrder();
     securityOrder.setTicker("AAPL");
