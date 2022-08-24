@@ -90,9 +90,10 @@ export default class TraderList extends Component {
     render() {
         return (
             <Table
-                dataSource={this.state.dataSource}
+                dataSource={this.props.traders}
                 columns={this.state.columns}
                 pagination={false}
+                rowKey={record=>record.id}
             />
         );
     }
