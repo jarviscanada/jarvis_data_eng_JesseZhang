@@ -87,6 +87,8 @@ export default withRouter(class Dashboard extends Component {
     }
 
 
+
+
     render() {
         return (
             <div className="dashboard">
@@ -190,7 +192,7 @@ export default withRouter(class Dashboard extends Component {
                             </Modal>
                         </div>
                     </div>
-                    <TraderList onTraderDeleteClick={this.onTraderDelete} traders={this.state.traders} />
+                    <TraderList onTraderDeleteClick={this.onTraderDelete}  traders={this.state.traders} />
                 </div>
             </div>
         );

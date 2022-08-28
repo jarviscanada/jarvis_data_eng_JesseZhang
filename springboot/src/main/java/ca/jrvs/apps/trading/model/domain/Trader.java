@@ -1,10 +1,12 @@
 package ca.jrvs.apps.trading.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 public class Trader implements Entity<Integer> {
 
   private String country;
+  @JsonFormat(pattern="yyyy-MM-dd")
   private Date dob;
   private String email;
   private String firstName;

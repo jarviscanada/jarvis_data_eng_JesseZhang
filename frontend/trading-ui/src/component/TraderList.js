@@ -2,15 +2,20 @@ import { Component } from 'react';
 import { Table } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt as deleteIcon } from '@fortawesome/free-solid-svg-icons';
-
+import { faMagnifyingGlass as detailIcon } from '@fortawesome/free-solid-svg-icons';
+import { traderAccountUrl } from '../util/constants';
 
 import 'antd/dist/antd.min.css';
 import './TraderList.scss';
 
 export default class TraderList extends Component {
 
+
+
+
     constructor(props) {
         super(props);
+
 
         // Initialization of columns
         const columns = [
@@ -47,8 +52,16 @@ export default class TraderList extends Component {
                 dataIndex: 'actions',
                 key: 'actions',
                 render: (text, record) => (
+                    <div>
                     <div className="trader-delete-icon">
-                        <FontAwesomeIcon icon={ deleteIcon } onClick={() => props.onTraderDeleteClick(record.id) } />
+                        <FontAwesomeIcon icon={deleteIcon} onClick={() => props.onTraderDeleteClick(record.id)} />
+
+                    </div>
+                    <div className="trader-delete-icon">
+                    <a href={"/trader/"+record.id}>
+                            <FontAwesomeIcon icon={detailIcon} />
+                            </a>
+                        </div>
                     </div>
                 ),
             },
@@ -93,7 +106,7 @@ export default class TraderList extends Component {
                 dataSource={this.props.traders}
                 columns={this.state.columns}
                 pagination={false}
-                rowKey={record=>record.id}
+                rowKey={record => record.id}
             />
         );
     }
