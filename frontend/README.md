@@ -12,17 +12,21 @@ Use markdown code block for your quick-start commands
     #download backend app images
     docker pull natsumeqi/trading-app
     docker pull natsumeqi/trading-psl
+    docker pull natsumeqi/trading-front-react
 
     #create a new docker network
     docker network create --driver bridge trading-net
     ```
 - Have up & running docker image of backend application (provide docker image)
     ```
-    #start two docker containers
+    #start two backend docker containers
     docker run --name trading-psql-dev  -e POSTGRES_PASSWORD=password  -e POSTGRES_DB=jrvstrading  -e POSTGRES_USER=postgres  --network trading-net  -d -p 5432:5432 trading-psl
 
     export IEX_PUB_TOKEN={your IEX public token}
     docker run --name trading-app-dev  -e "PSQL_URL=jdbc:postgresql://trading-psql-dev:5432/jrvstrading"  -e "PSQL_USER=postgres"  -e "PSQL_PASSWORD=password"  -e "IEX_PUB_TOKEN=${IEX_PUB_TOKEN}"  --network trading-net  -p 8080:8080 -t trading-app 
+
+    #start the frontend docker container
+    docker run -p 3000:3000 -d trading-front-react
     ```
 - Install node & npm
 
@@ -43,7 +47,7 @@ As the architecture diagram below, the dashboard page contains a list of current
 The test was done by manual integration tests.
 
 # Deployment
-How did you deploy your app? (e.g. Github, docker)
+The source code is hosted on Github. The app is dockerized.
 
 # Improvements
 
