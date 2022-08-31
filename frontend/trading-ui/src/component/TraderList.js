@@ -3,7 +3,7 @@ import { Table } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt as deleteIcon } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlass as detailIcon } from '@fortawesome/free-solid-svg-icons';
-import { traderAccountUrl } from '../util/constants';
+
 
 import 'antd/dist/antd.min.css';
 import './TraderList.scss';
