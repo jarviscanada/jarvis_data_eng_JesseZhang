@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import axios from 'axios';
 import { Input, Modal, Button, Form } from 'antd';
@@ -11,6 +11,8 @@ import "./TraderAccount.scss";
 
 export default withRouter(class TraderAccountPage extends Component {
 
+    depositFormRef = React.createRef() 
+    withdrawalFormRef = React.createRef();
 
     constructor(props) {
         super(props);
@@ -190,7 +192,9 @@ export default withRouter(class TraderAccountPage extends Component {
                                 }}
                                 onCancel={this.handleDepositCancel}
                             >
-                                <Form ref={this.depositFormRef}>
+                                <Form
+                                    ref={this.depositFormRef}
+                                >
                                     <div className="funds-form">
                                         <Form.Item name="Amount" rules={[
                                             {
@@ -205,13 +209,10 @@ export default withRouter(class TraderAccountPage extends Component {
                                             </div>
                                         </Form.Item>
                                     </div>
-
-
                                 </Form>
-
-
-
                             </Modal>
+
+
                             <Button onClick={this.showWithdrawModal.bind(this)}>Withdraw Funds</Button>
                             <Modal
                                 title="Withdraw Funds"
@@ -225,16 +226,21 @@ export default withRouter(class TraderAccountPage extends Component {
                                             this.handleWithdrawOk();
                                         });
                                 }}
-                                onCancel={this.handleWithdrawCancel}>
-                                <Form ref={this.withdrawalFormRef}>
+                                onCancel={this.handleWithdrawCancel}
+                            >
+                                <Form
+                                    ref={this.withdrawalFormRef}
+                                >
                                     <div className="funds-form">
-                                        <Form.Item name="Amount" rules={[
-                                            {
-                                                required: true,
-                                                pattern: new RegExp(/^[0-9]+$/),
-                                                message: "Amount has to be a whole number greater than 0."
-                                            },
-                                        ]}
+                                        <Form.Item
+                                            name="Amount"
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    pattern: new RegExp(/^[0-9]+$/),
+                                                    message: "Amount has to be a whole number greater than 0."
+                                                },
+                                            ]}
                                         >
                                             <div className="funds-field">
                                                 <Input allowClear={false} placeholder="Funds" onChange={(event) => this.onInputChange("withdrawFunds", event.target.value)} />
@@ -242,7 +248,6 @@ export default withRouter(class TraderAccountPage extends Component {
                                         </Form.Item>
                                     </div>
                                 </Form>
-
                             </Modal>
                         </div>
                     </div>

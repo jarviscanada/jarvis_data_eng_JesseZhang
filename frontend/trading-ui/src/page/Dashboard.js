@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Input, DatePicker, Modal, Button, Form } from 'antd';
 import axios from 'axios';
@@ -11,6 +11,10 @@ import 'antd/dist/antd.min.css';
 import "./Dashboard.scss";
 
 export default withRouter(class Dashboard extends Component {
+
+    formRef = React.createRef();
+
+
     constructor(props) {
         super(props);
         // Bind methods to this component in constructor so they can set the state of the component
@@ -156,33 +160,33 @@ export default withRouter(class Dashboard extends Component {
                                                         required: true,
                                                         pattern: new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
                                                     },
-                                                ]} 
-                                                >
+                                                ]}
+                                            >
                                                 <Input allowClear={false} placeholder="john.doe@gmail.com" onChange={(event) => this.onInputChange("email", event.target.value)} />
                                             </Form.Item>
                                         </div>
                                         <div className="add-trader-field">
                                             <Form.Item
-                                            name="Country" 
-                                            label="Country"
-                                            rules={[
+                                                name="Country"
+                                                label="Country"
+                                                rules={[
                                                     {
                                                         required: true,
                                                     },
-                                                ]} 
+                                                ]}
                                             >
                                                 <Input allowClear={false} placeholder="Canada" onChange={(event) => this.onInputChange("country", event.target.value)} />
                                             </Form.Item>
                                         </div>
                                         <div className="add-trader-field">
-                                            <Form.Item 
-                                            name="Date of Birth"
-                                            label="Date of Birth"
-                                            rules={[
+                                            <Form.Item
+                                                name="Date of Birth"
+                                                label="Date of Birth"
+                                                rules={[
                                                     {
                                                         required: true,
                                                     },
-                                                ]} 
+                                                ]}
                                             >
                                                 <DatePicker style={{ width: "100%" }} placeholder="" onChange={(date, dateString) => this.onInputChange("dob", date.format("yyyy-MM-DD"))} />
                                             </Form.Item>
@@ -192,7 +196,7 @@ export default withRouter(class Dashboard extends Component {
                             </Modal>
                         </div>
                     </div>
-                    <TraderList onTraderDeleteClick={this.onTraderDelete}  traders={this.state.traders} />
+                    <TraderList onTraderDeleteClick={this.onTraderDelete} traders={this.state.traders} />
                 </div>
             </div>
         );
