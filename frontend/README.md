@@ -12,7 +12,7 @@ Use markdown code block for your quick-start commands
     #download backend app images
     docker pull natsumeqi/trading-app
     docker pull natsumeqi/trading-psl
-    docker pull natsumeqi/trading-front-react
+    docker pull natsumeqi/trading-react
 
     #create a new docker network
     docker network create --driver bridge trading-net
